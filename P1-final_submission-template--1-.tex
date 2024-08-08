@@ -1,0 +1,448 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Module Project 1: Infographic Assignment},
+  pdfauthor={ENTER YOUR NAME HERE},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Module Project 1: Infographic Assignment}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{INSH 5302 - Information Design \& Visual Analytics}
+\author{ENTER YOUR NAME HERE}
+\date{January 21, 2024}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Required packages for our course. Do not delete.}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(mosaic)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Big-picture}\label{big-picture}
+
+\subsection{Research Question}\label{research-question}
+
+\begin{quote}
+How have literacy rates among young women in Liberia evolved over time,
+and what trends can be observed in gender parity in education during the
+same period?
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Data}\label{data}
+
+\subsection{Description of data}\label{description-of-data}
+
+\begin{quote}
+The dataset focuses on gender equality metrics in Liberia, detailing
+indicators like the proportion of firms with female top managers, female
+ownership participation, and youth literacy rates (specifically for
+females aged 15-24). It also includes the gender parity index for youth
+literacy, highlighting disparities in literacy rates between genders.
+This dataset is sourced from the Humanitarian Data Exchange (HDX), an
+open platform for sharing data across various crises and organizations.
+HDX aims to simplify the discovery and usage of humanitarian data for
+analysis \url{https://data.humdata.org/faq}.
+\end{quote}
+
+\subsection{Load data into R}\label{load-data-into-r}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gender\_lbr }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"gender\_lbr.csv"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(gender\_lbr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Country.Name  Country.ISO3       Year                                            Indicator.Name       Indicator.Code
+## 1 #country+name #country+code #date+year                                           #indicator+name      #indicator+code
+## 2       Liberia           LBR       2017                Firms with female top manager (% of firms)       IC.FRM.FEMM.ZS
+## 3       Liberia           LBR       2009                Firms with female top manager (% of firms)       IC.FRM.FEMM.ZS
+## 4       Liberia           LBR       2017 Firms with female participation in ownership (% of firms)       IC.FRM.FEMO.ZS
+## 5       Liberia           LBR       2009 Firms with female participation in ownership (% of firms)       IC.FRM.FEMO.ZS
+## 6       Liberia           LBR       2019     Literacy rate, youth female (% of females ages 15-24) SE.ADT.1524.LT.FE.ZS
+##                  Value
+## 1 #indicator+value+num
+## 2                 20.4
+## 3                 29.9
+## 4                 37.4
+## 5                   53
+## 6     71.8499984741211
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Variables}\label{variables}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(gender\_lbr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Country.Name"   "Country.ISO3"   "Year"           "Indicator.Name" "Indicator.Code" "Value"
+\end{verbatim}
+
+The variables I used in my infographic design are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Year
+\item
+  Indicator.Name
+\item
+  Value
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Data Analysis}\label{data-analysis}
+
+\subsection{Summary Statistics}\label{summary-statistics}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Inspect the data}
+\FunctionTok{summary}\NormalTok{(gender\_lbr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  Country.Name       Country.ISO3           Year           Indicator.Name     Indicator.Code        Value          
+##  Length:5644        Length:5644        Length:5644        Length:5644        Length:5644        Length:5644       
+##  Class :character   Class :character   Class :character   Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character   Mode  :character   Mode  :character
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Filter the data for literacy rates and gender parity index}
+\NormalTok{literacy\_data }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(gender\_lbr, Indicator.Name }\SpecialCharTok{==} \StringTok{"Literacy rate, youth female (\% of females ages 15{-}24)"}\NormalTok{)}
+\NormalTok{gender\_parity\_data }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(gender\_lbr, Indicator.Name }\SpecialCharTok{==} \StringTok{"Literacy rate, youth (ages 15{-}24), gender parity index (GPI)"}\NormalTok{)}
+
+\CommentTok{\#convert to numeric}
+\NormalTok{literacy\_data}\SpecialCharTok{$}\NormalTok{Year }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(literacy\_data}\SpecialCharTok{$}\NormalTok{Year)}
+\NormalTok{literacy\_data}\SpecialCharTok{$}\NormalTok{Value }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{","}\NormalTok{, }\StringTok{""}\NormalTok{, literacy\_data}\SpecialCharTok{$}\NormalTok{Value)) }
+
+\NormalTok{gender\_parity\_data}\SpecialCharTok{$}\NormalTok{Year }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(gender\_parity\_data}\SpecialCharTok{$}\NormalTok{Year)}
+\NormalTok{gender\_parity\_data}\SpecialCharTok{$}\NormalTok{Value }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{","}\NormalTok{, }\StringTok{""}\NormalTok{, gender\_parity\_data}\SpecialCharTok{$}\NormalTok{Value)) }
+
+\CommentTok{\#Checked for NA values to ensure data integrity.}
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(literacy\_data}\SpecialCharTok{$}\NormalTok{Year))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(literacy\_data}\SpecialCharTok{$}\NormalTok{Value))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(gender\_parity\_data}\SpecialCharTok{$}\NormalTok{Year))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(gender\_parity\_data}\SpecialCharTok{$}\NormalTok{Value))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+Summary Statistics *Using the favstats() function
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{statistics1 }\OtherTok{\textless{}{-}} \FunctionTok{favstats}\NormalTok{(Value }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Year, }\AttributeTok{data =}\NormalTok{ literacy\_data )}
+\NormalTok{statistics2 }\OtherTok{\textless{}{-}} \FunctionTok{favstats}\NormalTok{(Value }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Year, }\AttributeTok{data =}\NormalTok{ literacy\_data )}
+\FunctionTok{head}\NormalTok{(statistics1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Year      min       Q1   median       Q3      max     mean sd n missing
+## 1 1984 33.72456 33.72456 33.72456 33.72456 33.72456 33.72456 NA 1       0
+## 2 2007 37.17031 37.17031 37.17031 37.17031 37.17031 37.17031 NA 1       0
+## 3 2013 63.20000 63.20000 63.20000 63.20000 63.20000 63.20000 NA 1       0
+## 4 2017 45.63871 45.63871 45.63871 45.63871 45.63871 45.63871 NA 1       0
+## 5 2019 71.85000 71.85000 71.85000 71.85000 71.85000 71.85000 NA 1       0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(statistics2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Year      min       Q1   median       Q3      max     mean sd n missing
+## 1 1984 33.72456 33.72456 33.72456 33.72456 33.72456 33.72456 NA 1       0
+## 2 2007 37.17031 37.17031 37.17031 37.17031 37.17031 37.17031 NA 1       0
+## 3 2013 63.20000 63.20000 63.20000 63.20000 63.20000 63.20000 NA 1       0
+## 4 2017 45.63871 45.63871 45.63871 45.63871 45.63871 45.63871 NA 1       0
+## 5 2019 71.85000 71.85000 71.85000 71.85000 71.85000 71.85000 NA 1       0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ literacy\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Value)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{color =} \StringTok{"red"}\NormalTok{) }\SpecialCharTok{+} 
+    \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Trend of Female Literacy Rates in Liberia (Ages 15{-}24)"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Literacy Rate (\%)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{P1-final_submission-template--1-_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ gender\_parity\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Value)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{color =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+} 
+    \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Trend of Gender Parity Index in Liberia (Ages 15{-}24)"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Gender Parity Index(\%)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{P1-final_submission-template--1-_files/figure-latex/unnamed-chunk-7-2.pdf}
+
+The red line graph illustrates an overall positive trend in the literacy
+rates of young women in Liberia, despite some fluctuations. Initially,
+the literacy rates show modest growth, followed by a significant rise
+and a period of decline, before a strong recovery to the highest rates
+observed towards the end of the period. This pattern reflects the
+ongoing efforts and varying success in enhancing educational access and
+quality for young women.
+
+The blue line graph tracks the gender parity index, serving as a measure
+of equality in educational access and achievement between genders. The
+trend generally moves towards greater parity, indicating strides towards
+equal educational opportunities for both genders. However, the journey
+shows gradual progress with some setbacks, highlighting the intricate
+challenges involved in consistently advancing gender parity in education
+in Liberia.
+
+\section{Infographic}\label{infographic}
+
+\begin{quote}
+I input the data for the year and values for both female literacy rates
+and gender parity index into a Google Sheet and downloaded it as a CSV
+file. I found a line graph template in Canva and uploaded the CSV file,
+and the numbers were directly integrated into the line graph. I then
+added all of the necessary text distributions such as the title, the
+legends, and a brief explanation of the findings. I also included
+visuals that represent a girl walking to school, which I colored pink
+for the female literacy graph, and a boy and a girl standing equally to
+represent gender parity in the gender parity graph.
+\end{quote}
+
+Blue Modern Line Chart Graph by Etta Brooks
+
+\subsubsection{(c)}\label{c}
+
+Provide a brief description of your data visualization process.
+
+\begin{quote}
+Data Preparation:
+\end{quote}
+
+Sourced and loaded data from the Humanitarian Data Exchange into R,
+focusing on gender equality metrics specific to Liberia. Data Processing
+in R:
+
+Conducted data cleaning, transformation, and statistical analysis using
+R packages like tidyverse and mosaic. Visualization:
+
+Utilized ggplot in R for initial data visualization and then exported
+key data for enhanced visual representation using Canva. Infographic
+Enhancement:
+
+Integrated the data into a Canva line graph template, enriching the
+infographic with meaningful visuals and textual annotations to ensure
+clarity and impact. Narrative and Presentation:
+
+Carefully embedded the final infographic in the R Markdown document,
+ensuring a cohesive narrative and visual flow.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{References}\label{references}
+
+The creation of the infographic involved the use of various sources for
+data, graphics, and analysis techniques. Below are the references used
+in this project:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Data Source}: Humanitarian Data Exchange (HDX). Specific
+  details about the gender equality metrics in Liberia. Available at
+  \href{https://data.humdata.org/faq}{data.humdata.org}.
+\item
+  \textbf{R Packages}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{tidyverse} for data manipulation and visualization.
+  \item
+    \texttt{mosaic} for statistical analysis.
+  \end{itemize}
+\item
+  \textbf{Visualization Tool}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Canva for enhancing data visualizations and creating infographics.
+    Canva.
+  \end{itemize}
+\item
+  \textbf{AI Assistance}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    OpenAI's ChatGPT was consulted for guidance on visualization
+    techniques, as well as for proofreading and grammar suggestions.
+  \end{itemize}
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\end{document}

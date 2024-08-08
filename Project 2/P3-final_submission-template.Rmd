@@ -1,0 +1,173 @@
+---
+title: "Module 3 Project 3: Presentation or Website Visualization Assignment"
+subtitle: "INSH 5302 -  Information Design & Visual Analytics"
+author: "ENTER YOUR NAME HERE"
+date: "Apr 7, 2024"
+output:
+  html_document:
+    code_download: true
+    fig_caption: yes
+    theme: lumen
+    toc: yes
+    toc_depth: 2
+    df_print: kable
+    toc_float:
+      collapsed: no
+---
+
+```{r, message=FALSE}
+# Required packages for our course. Do not delete.
+library(tidyverse)
+library(mosaic)
+```
+
+# Big-picture
+
+## Research Question
+
+*What is the question you hope to answer with your data visualization?*
+
+> DELETE THE QUESTION ABOVE AND PROVIDE YOUR ANSWER HERE
+
+* * *
+
+# Data
+
+## Description of data
+
+*Please give a very short description of the data set along with it's original source. If it is part of a package, please indicate that.*
+
+> DELETE THE PROMPT ABOVE AND PROVIDE YOUR ANSWER HERE
+
+## Load data into R
+
+*Include the code to load your data here. Using the head() function, show the first 10 rows of data. *
+
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+* * *
+
+# Variables
+
+*Using the names() function, show the names of all the columns (i.e. potential variables) in your data set. Delete this when complete.*
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+The variables I used in my data visualization design are:
+
+1. Variable 1
+2. Variable 2
+3. Variable 3
+4. Variable 4
+5. Variable 5
+
+* * *
+
+# Data Analysis
+
+## Summary Statistics
+
+*Using the favstats() function, calculate the necessary statistics you used to create your data visualization. Delete this when complete.*
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+> Provide the high-level insights you used to craft your data visualization design.
+
+## Additional Analyses
+
+*If you conducted any other analyses of your data set to gather the data in your project, use this section to conduct your research. Delete this when complete.*
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+* * *
+
+# Interactive Presentation or Website Visualiztion
+
+*Module 3's Project allows students to choose ONE OPTION among the two options provided below. You should denote which ONE of the two options you plan to pursue and provide a brief overview of your vision for the project. Delete the other options that you will not be pursuing.*
+
+## Option 1 | Interactive Canva Presentation
+Students will use Canva to create an interactive presentation that showcases their data findings and creates a cohesive, one-stop hub for information regarding their topics. Students must include a minimum of 5 pages of analysis, 1 page for their home, and 1 page for references/overview. 
+
+### Link to Canva Presentation Dashboard
+
+**Embed your Canva presentation here. Don't forget to add in `data-external="1"` at the end of your `<iframe>` or else R-Markdown will not display properly. Delete this instruction once your presentation is embedded.**
+
+### Descriptions of Canva Pages (Excluding the Home Page and Reference Page)
+
+For each page, you should provide detailed reflection on the data visualization you used and how it helps to answer your over arching research question. 
+
+#### Canva Page 1
+
+> Provide a summary of what this visualization shows and how it helps to answer your research question. 
+
+#### Canva Page 2
+
+> Provide a summary of what this visualization shows and how it helps to answer your research question. 
+
+#### Canva Page 3
+
+> Provide a summary of what this visualization shows and how it helps to answer your research question. 
+
+#### Canva Page 4
+
+> Provide a summary of what this visualization shows and how it helps to answer your research question.
+
+#### Canva Page 5
+
+> Provide a summary of what this visualization shows and how it helps to answer your research question.
+
+## Option 2 | Interactive Website
+Students will create a website that present their data findings and topic in a website where users can engage with their platform. Students must include a minimum of 5 pages of analysis, 1 page for their home, and 1 page for references/overview. 
+
+- Website Softwares Students are Allowed to Use:
+  + Canva (Free!),
+  + DreamWeaver (if students have web hosting), 
+  + SharePoint (Free!), or 
+  + Google Sites (Free!)
+
+### Descriptions of Website Pages (Excluding the Home Page and Reference Page)
+
+For each page, you should provide detailed reflection on the data visualization you used and how it helps to answer your over arching research question. 
+
+#### Website Page 1
+
+> Provide a summary of what this visualization shows and how it helps to answer your research question. 
+
+#### Website Page 2
+
+> Provide a summary of what this visualization shows and how it helps to answer your research question. 
+
+#### Website Page 3
+
+> Provide a summary of what this visualization shows and how it helps to answer your research question. 
+
+#### Website Page 4
+
+> Provide a summary of what this visualization shows and how it helps to answer your research question.
+
+#### Website Page 5
+
+> Provide a summary of what this visualization shows and how it helps to answer your research question.   
+
+* * *
+
+# References
+
+*Include any references that you might have used to construct your graphic. This may include, but is not limited to citations for: graphics used, coding techniques, data collection, R-Markdown/RStudio documentation, etc. Delete this when complete.*
+
+1. Reference 1
+2. Reference 2
+3. Reference 3
+4. Reference 4
+5. Reference 5
+
+* * *
+
+## All done!
+
+Knit the completed R Markdown file as a HTML document (click the "Knit" button at the top of the script editor window) and upload it to the submission portal on Canvas.
